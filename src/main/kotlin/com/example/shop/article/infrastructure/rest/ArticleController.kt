@@ -1,9 +1,10 @@
 package com.example.shop.article.infrastructure.rest
 
+import com.example.shop.article.domain.Article
 import com.example.shop.article.domain.ArticleId
-import com.example.shop.article.domain.port.`in`.ArticleUseCase
 import com.example.shop.article.infrastructure.rest.dto.ArticleResponse
 import com.example.shop.article.infrastructure.rest.dto.CreateArticleRequest
+import com.example.shop.article.port.`in`.ArticleUseCase
 import com.example.shop.shared.domain.Price
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -36,7 +37,7 @@ class ArticleController(
             ?: ResponseEntity.notFound().build()
     }
 
-    private fun com.example.shop.article.domain.Article.toResponse(): ArticleResponse {
+    private fun Article.toResponse(): ArticleResponse {
         return ArticleResponse(
             id = id.value.toString(),
             name = name,

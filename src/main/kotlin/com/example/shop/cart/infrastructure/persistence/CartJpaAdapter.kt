@@ -4,16 +4,16 @@ import com.example.shop.article.domain.Article
 import com.example.shop.article.domain.ArticleId
 import com.example.shop.cart.domain.Cart
 import com.example.shop.cart.domain.CartId
-import com.example.shop.cart.domain.port.out.CartRepository
 import com.example.shop.cart.infrastructure.persistence.entity.CartEntity
 import com.example.shop.cart.infrastructure.persistence.entity.CartItemEntity
+import com.example.shop.cart.port.out.CartRepository
 import com.example.shop.shared.domain.Price
 import com.example.shop.shared.domain.Quantity
 import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class CartPersistenceAdapter(
+class CartJpaAdapter(
     private val cartJpaRepository: CartJpaRepository
 ) : CartRepository {
 

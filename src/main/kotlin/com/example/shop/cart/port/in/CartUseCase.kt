@@ -1,4 +1,4 @@
-package com.example.shop.cart.domain.port.`in`
+package com.example.shop.cart.port.`in`
 
 import com.example.shop.article.domain.ArticleId
 import com.example.shop.cart.domain.Cart

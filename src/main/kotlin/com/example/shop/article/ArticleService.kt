@@ -1,9 +1,9 @@
-package com.example.shop.article.application
+package com.example.shop.article
 
 import com.example.shop.article.domain.Article
 import com.example.shop.article.domain.ArticleId
-import com.example.shop.article.domain.port.`in`.ArticleUseCase
-import com.example.shop.article.domain.port.out.ArticleRepository
+import com.example.shop.article.port.`in`.ArticleUseCase
+import com.example.shop.article.port.out.ArticleRepository
 import com.example.shop.shared.domain.Price
 import org.springframework.stereotype.Service
 

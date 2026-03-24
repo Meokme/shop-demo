@@ -3,10 +3,10 @@ package com.example.shop.cart.infrastructure.rest
 import com.example.shop.article.domain.ArticleId
 import com.example.shop.cart.domain.Cart
 import com.example.shop.cart.domain.CartId
-import com.example.shop.cart.domain.port.`in`.CartUseCase
 import com.example.shop.cart.infrastructure.rest.dto.AddItemRequest
 import com.example.shop.cart.infrastructure.rest.dto.CartItemResponse
 import com.example.shop.cart.infrastructure.rest.dto.CartResponse
+import com.example.shop.cart.port.`in`.CartUseCase
 import com.example.shop.shared.domain.Quantity
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

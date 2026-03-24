@@ -1,4 +1,4 @@
-package com.example.shop.cart.domain.port.out
+package com.example.shop.cart.port.out
 
 import com.example.shop.cart.domain.Cart
 import com.example.shop.cart.domain.CartId

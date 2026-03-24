@@ -8,7 +8,6 @@ data class Price(val amount: BigDecimal) {
     }
 
     operator fun times(quantity: Quantity): Price = Price(amount.multiply(BigDecimal(quantity.value)))
-
     operator fun plus(other: Price): Price = Price(amount.add(other.amount))
 
     companion object {

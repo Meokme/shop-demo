@@ -1,11 +1,11 @@
-package com.example.shop.cart.application
+package com.example.shop.cart
 
 import com.example.shop.article.domain.ArticleId
-import com.example.shop.article.domain.port.out.ArticleRepository
+import com.example.shop.article.port.out.ArticleRepository
 import com.example.shop.cart.domain.Cart
 import com.example.shop.cart.domain.CartId
-import com.example.shop.cart.domain.port.`in`.CartUseCase
-import com.example.shop.cart.domain.port.out.CartRepository
+import com.example.shop.cart.port.`in`.CartUseCase
+import com.example.shop.cart.port.out.CartRepository
 import com.example.shop.shared.domain.Quantity
 import org.springframework.stereotype.Service
 

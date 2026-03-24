@@ -13,17 +13,48 @@ Ein Kotlin Spring Boot Shop-Beispiel mit hexagonaler Architektur und Domain-Driv
 ```
 com.example.shop/
 ├── article/
-│   ├── domain/           # Article, ArticleId, ArticleRepository (Port)
-│   ├── application/     # ArticleService
-│   └── infrastructure/  # REST Controller, Persistence Adapter, JPA
+│   ├── domain/
+│   │   ├── Article.kt
+│   │   └── ArticleId.kt
+│   ├── port/
+│   │   ├── in/ArticleUseCase.kt
+│   │   └── out/ArticleRepository.kt
+│   ├── ArticleService.kt
+│   └── infrastructure/
+│       ├── rest/
+│       │   ├── ArticleController.kt
+│       │   └── dto/
+│       │       ├── CreateArticleRequest.kt
+│       │       └── ArticleResponse.kt
+│       └── persistence/
+│           ├── ArticleJpaRepository.kt
+│           ├── ArticlePersistenceAdapter.kt
+│           └── entity/ArticleEntity.kt
 ├── cart/
-│   ├── domain/          # Cart, CartItem, CartUseCase (Port), CartRepository (Port)
-│   ├── application/     # CartService
-│   └── infrastructure/  # REST Controller, Persistence Adapter, JPA
-├── shared/
-│   └── domain/  # Quantity, Price
-└── config/
-    └── BeanConfig.kt    # Manual DI (kein @Service)
+│   ├── domain/
+│   │   ├── Cart.kt
+│   │   ├── CartItem.kt
+│   │   └── CartId.kt
+│   ├── port/
+│   │   ├── in/CartUseCase.kt
+│   │   └── out/CartRepository.kt
+│   ├── CartService.kt
+│   └── infrastructure/
+│       ├── rest/
+│       │   ├── CartController.kt
+│       │   └── dto/
+│       │       ├── AddItemRequest.kt
+│       │       └── CartResponse.kt
+│       └── persistence/
+│           ├── CartJpaRepository.kt
+│           ├── CartPersistenceAdapter.kt
+│           └── entity/
+│               ├── CartEntity.kt
+│               └── CartItemEntity.kt
+├── shared/domain/
+│   ├── Quantity.kt
+│   └── Price.kt
+└── DemoShopApplication.kt
 ```
 
 ## Voraussetzungen
