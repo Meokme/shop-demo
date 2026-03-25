@@ -4,7 +4,7 @@ import java.math.BigDecimal
 
 data class Price(val amount: BigDecimal) {
     init {
-        require(amount >= BigDecimal.ZERO)
+        require(amount >= BigDecimal.ZERO) { "Price must be positive, but was $amount" }
     }
 
     operator fun times(quantity: Quantity): Price = Price(amount.multiply(BigDecimal(quantity.value)))
