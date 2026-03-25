@@ -1,0 +1,56 @@
+@laptopId = a4c35bd5-3148-4130-9a49-e29747492990
+@mouseId = 2c631e23-64f4-4373-bf28-bb47d9a2e0a2
+@cartId = fafeb96f-4363-4259-bf26-afb31170da61
+
+### Create Laptop article
+POST http://localhost:8080/api/articles
+Content-Type: application/json
+
+{
+  "name": "Laptop",
+  "price": 999.99
+}
+
+### Create mouse article
+POST http://localhost:8080/api/articles
+Content-Type: application/json
+
+{
+  "name": "Maus",
+  "price": 29.99
+}
+
+### Get all articles
+GET http://localhost:8080/api/articles
+
+### Get article by id
+GET http://localhost:8080/api/articles/{{mouseId}}
+
+### Create empty cart
+POST http://localhost:8080/api/carts
+
+### Get cart by id
+GET http://localhost:8080/api/carts/{{cartId}}
+
+### Add laptops to cart
+POST http://localhost:8080/api/carts/{{cartId}}/items
+Content-Type: application/json
+
+{
+  "articleId": "{{laptopId}}",
+  "quantity": 2
+}
+
+### Add mouses to cart
+POST http://localhost:8080/api/carts/{{cartId}}/items
+Content-Type: application/json
+
+{
+  "articleId": "{{mouseId}}",
+  "quantity": 3
+}
+
+### Delete mouses from cart
+DELETE http://localhost:8080/api/carts/{{cartId}}/items/{{mouseId}}
+
+

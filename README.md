@@ -65,10 +65,7 @@ com.example.shop/
 ## Lokale Entwicklung
 
 ```bash
-# 1. PostgreSQL starten
-docker compose up -d
-
-# 2. Anwendung starten
+# Anwendung starten
 ./gradlew bootRun
 ```
 
@@ -130,3 +127,5 @@ curl -s -X POST "http://localhost:8080/api/carts/$CART_ID/items" \
 # 4. Warenkorb abrufen
 curl http://localhost:8080/api/carts/$CART_ID
 ```
+
+Einige Beispiel-Requests können unter [http/example.http](http/example.http) getestet werden, wenn die Anwendung läuft.
