@@ -1,7 +1,7 @@
 package com.example.shop.cart
 
 import com.example.shop.article.domain.ArticleId
-import com.example.shop.article.port.out.ArticleRepository
+import com.example.shop.article.port.`in`.ArticleUseCase
 import com.example.shop.cart.domain.Cart
 import com.example.shop.cart.domain.CartId
 import com.example.shop.cart.port.`in`.CartUseCase
@@ -10,10 +10,7 @@ import com.example.shop.shared.domain.Quantity
 import org.springframework.stereotype.Service
 
 @Service
-class CartService(
-    private val cartRepository: CartRepository,
-    private val articleRepository: ArticleRepository
-) : CartUseCase {
+class CartService(private val cartRepository: CartRepository, private val articleService: ArticleUseCase) : CartUseCase {
 
     override fun createCart(): Cart {
         val cart = Cart.create()
@@ -22,7 +19,7 @@ class CartService(
 
     override fun addItemToCart(cartId: CartId, articleId: ArticleId, quantity: Quantity): Cart {
         val cart = cartRepository.findByIdOrThrow(cartId)
-        val article = articleRepository.findByIdOrThrow(articleId)
+        val article = articleService.getArticle(articleId) ?: throw IllegalArgumentException("Article not found: $articleId")
         cart.addItem(article, quantity)
         return cartRepository.save(cart)
     }
